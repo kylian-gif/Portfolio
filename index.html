@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kylian Hausmann - Portfolio | Systèmes Embarqués & Radio</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 2rem 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: var(--primary);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        section {
+            margin-bottom: 3rem;
+        }
+        h1, h2, h3 {
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+        h2 {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 1.5rem auto;
+        }
+        .badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(37, 99, 235, 0.3);
+        }
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin: 0.5rem;
+        }
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .card h3 {
+            color: var(--text);
+            font-size: 1.3rem;
+        }
+        .card .date {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-weight: bold;
+        }
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        ul {
+            list-style-type: none;
+            color: var(--text-muted);
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.2rem;
+        }
+        ul li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .skills-tags span {
+            background: var(--border);
+            color: var(--text);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#about">À propos</a>
+            <a href="#projects">Projets</a>
+            <a href="#experience">Expériences</a>
+            <a href="#education">Formations</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero">
+            <span class="badge">Alternant Développeur chaîne radio chez Thales</span>
+            <h1>Kylian Hausmann</h1>
+            <p>Futur étudiant en 3e année de BUT GEII (Électronique & Systèmes Embarqués). Titulaire d'un BTS CIEL, passionné par le hardware, la programmation et les microcontrôleurs[cite: 1].</p>
+            <div>
+                <a href="#contact" class="btn">Me contacter</a>
+                <a href="#projects" class="btn" style="background-color: transparent; border: 1px solid var(--primary);">Voir mes projets</a>
+            </div>
+        </div>
+
+        <!-- À propos -->
+        <section id="about">
+            <h2>À propos</h2>
+            <div class="card">
+                <p>Rigoureux, adaptable et doté d'un bon esprit d'autonomie[cite: 1], je combine des compétences solides en électronique analogique/numérique et en programmation (Python, C/C++). Actuellement en alternance, je souhaite contribuer activement au développement et aux tests d'équipements radio[cite: 1].</p>
+                <div style="margin-top: 1rem;">
+                    <strong>Langues :</strong> Français (Maternelle) | Anglais (B2) | Espagnol (B1)[cite: 1]<br>
+                    <strong>Centres d'intérêt :</strong> Aéronautique (aviation, salons)[cite: 1] | Automobile (restauration de véhicules anciens)[cite: 1]
+                </div>
+            </div>
+        </section>
+
+        <!-- Projets -->
+        <section id="projects">
+            <h2>Projets Techniques</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="date">2026 - Projet Scolaire / Personnel</span>
+                    <h3>Système de vidéosurveillance embarqué</h3>
+                    <p>Conception et intégration d'un système embarqué de vidéosurveillance[cite: 1].</p>
+                    <ul>
+                        <li>Câblage et architecture matérielle[cite: 1]</li>
+                        <li>Configuration des équipements réseau et interfaces[cite: 1]</li>
+                        <li>Programmation de microcontrôleurs[cite: 1]</li>
+                        <li>Tests fonctionnels et validation du dispositif[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="date">2025 - Projet Personnel</span>
+                    <h3>Frein à main pour simulateur</h3>
+                    <p>Développement complet d'un frein à main sur mesure[cite: 1].</p>
+                    <ul>
+                        <li>Conception mécanique et impression 3D[cite: 1]</li>
+                        <li>Intégration de capteurs[cite: 1]</li>
+                        <li>Programmation embarquée (Arduino micro)[cite: 1]</li>
+                        <li>Calibration et tests[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="date">2025 / 2026 - Prototypage</span>
+                    <h3>Impression 3D & Prototypage</h3>
+                    <p>Réalisation de pièces techniques pour projets électroniques (supports, boîtiers) via modélisation CAO[cite: 1].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expériences -->
+        <section id="experience">
+            <h2>Expériences Professionnelles</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="date">Depuis Septembre 2024</span>
+                    <h3>Technicien Informatique et Réseaux</h3>
+                    <p><strong>DSV (ex-DB Schenker)</strong>, Tremblay-en-France[cite: 1]</p>
+                    <ul>
+                        <li>Câblages réseaux et équipements informatiques[cite: 1]</li>
+                        <li>Interventions techniques et support Île-de-France[cite: 1]</li>
+                        <li>Mise en service et configuration d'infrastructures réseaux[cite: 1]</li>
+                        <li>Maintenance préventive et corrective[cite: 1]</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="date">Fév. 2022 - Avr. 2023</span>
+                    <h3>Stagiaire Technicien Informatique</h3>
+                    <p><strong>ABSOLUTE PC</strong>, Paris[cite: 1]</p>
+                    <ul>
+                        <li>Réparation et remplacement d'éléments défectueux[cite: 1]</li>
+                        <li>Configuration de postes utilisateurs et tests de fonctionnement[cite: 1]</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Formations & Compétences -->
+        <section id="education">
+            <h2>Formations & Compétences</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Formations</h3>
+                    <p><strong>BUT GEII (Électronique & Systèmes Embarqués)</strong><br>UPEC (2026 / 2027)[cite: 1]</p>
+                    <p><strong>BTS Cybersécurité, Informatique & Réseaux, Électronique (CIEL)</strong><br>UTEC Marne-la-Vallée (2024 / 2026)[cite: 1]</p>
+                </div>
+                <div class="card">
+                    <h3>Compétences Techniques</h3>
+                    <div class="skills-tags">
+                        <span>PYTHON</span>
+                        <span>C / C++</span>
+                        <span>SQL</span>
+                        <span>LINUX</span>
+                        <span>Microcontrôleurs</span>
+                        <span>Électronique Analogique/Numérique</span>
+                        <span>Tests & Validation</span>
+                        <span>Intégration Matérielle</span>
+                        <span>Instrumentation</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" style="text-align: center;">
+            <h2>Contact</h2>
+            <div class="card" style="max-width: 600px; margin: 1.5rem auto 0 auto;">
+                <p><strong>Téléphone :</strong> 07 82 81 35 62[cite: 1]</p>
+                <p><strong>Email :</strong> <a href="mailto:kylianhausmann@gmail.com" style="color: var(--primary);">kylianhausmann@gmail.com</a>[cite: 1]</p>
+                <p><strong>Localisation :</strong> Île-de-France (Permis B/A, véhiculé)[cite: 1]</p>
+                <div style="margin-top: 1.5rem;">
+                    <a href="mailto:kylianhausmann@gmail.com" class="btn">M'envoyer un email</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Kylian Hausmann | Portfolio</p>
+    </footer>
+
+</body>
+</html>
