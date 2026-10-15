@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kylian Hausmann - Portfolio | Systèmes Embarqués & Radio</title>
+    <title>Kylian Hausmann - Portfolio | Alternant Thales GEII</title>
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-dark: #1d4ed8;
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text: #f8fafc;
-            --text-muted: #94a3b8;
-            --border: #334155;
+            --primary: #0055A5; /* Bleu Thales */
+            --primary-light: #0080FF;
+            --accent: #00D4FF; /* Touche technologique/radio */
+            --bg: #0A1128; /* Fond bleu nuit très sombre style industriel */
+            --card-bg: #101B3B;
+            --text: #F0F4F8;
+            --text-muted: #94A3B8;
+            --border: #1E293B;
         }
         * {
             margin: 0;
@@ -26,24 +27,50 @@
             line-height: 1.6;
         }
         header {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            background: rgba(10, 17, 40, 0.95);
             border-bottom: 1px solid var(--border);
-            padding: 2rem 1rem;
-            text-align: center;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
             backdrop-filter: blur(10px);
         }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .thales-badge-logo {
+            background: var(--primary);
+            color: white;
+            font-weight: 800;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0, 85, 165, 0.5);
+        }
+        .logo-text {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--text);
+        }
+        nav {
+            display: flex;
+            gap: 20px;
+        }
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            margin: 0 15px;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: var(--primary);
+            color: var(--accent);
         }
         .container {
             max-width: 1000px;
@@ -51,23 +78,24 @@
             padding: 2rem 1rem;
         }
         section {
-            margin-bottom: 3rem;
+            margin-bottom: 3.5rem;
         }
         h1, h2, h3 {
             color: var(--text);
             margin-bottom: 1rem;
         }
         h2 {
-            border-bottom: 2px solid var(--primary);
-            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.4rem;
             display: inline-block;
+            font-size: 1.8rem;
         }
         .hero {
             text-align: center;
             padding: 4rem 1rem;
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
         .hero p {
@@ -78,28 +106,30 @@
         }
         .badge {
             display: inline-block;
-            background: rgba(37, 99, 235, 0.1);
-            color: var(--primary);
-            padding: 0.4rem 0.8rem;
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--accent);
+            padding: 0.5rem 1rem;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 1rem;
-            border: 1px solid rgba(37, 99, 235, 0.3);
+            margin-bottom: 1.2rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
         }
         .btn {
             display: inline-block;
             background-color: var(--primary);
             color: white;
             padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s;
+            transition: all 0.3s;
             margin: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0, 85, 165, 0.3);
         }
         .btn:hover {
-            background-color: var(--primary-dark);
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
         }
         .grid {
             display: grid;
@@ -111,12 +141,12 @@
             background-color: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1.8rem;
             transition: transform 0.3s, border-color 0.3s;
         }
         .card:hover {
             transform: translateY(-5px);
-            border-color: var(--primary);
+            border-color: var(--accent);
         }
         .card h3 {
             color: var(--text);
@@ -124,7 +154,7 @@
         }
         .card .date {
             font-size: 0.85rem;
-            color: var(--primary);
+            color: var(--accent);
             margin-bottom: 0.8rem;
             font-weight: bold;
         }
@@ -143,11 +173,10 @@
             padding-left: 1.2rem;
         }
         ul li::before {
-            content: "•";
-            color: var(--primary);
+            content: "▪";
+            color: var(--accent);
             position: absolute;
             left: 0;
-            font-weight: bold;
         }
         .skills-tags {
             display: flex;
@@ -156,15 +185,17 @@
             margin-top: 1rem;
         }
         .skills-tags span {
-            background: var(--border);
+            background: rgba(0, 85, 165, 0.2);
+            border: 1px solid rgba(0, 85, 165, 0.4);
             color: var(--text);
-            padding: 0.3rem 0.6rem;
+            padding: 0.4rem 0.8rem;
             border-radius: 4px;
             font-size: 0.85rem;
+            font-weight: 500;
         }
         footer {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
             border-top: 1px solid var(--border);
             color: var(--text-muted);
             font-size: 0.9rem;
@@ -174,6 +205,10 @@
 <body>
 
     <header>
+        <div class="logo-area">
+            <span class="thales-badge-logo">THALES</span>
+            <span class="logo-text">Kylian Hausmann</span>
+        </div>
         <nav>
             <a href="#about">À propos</a>
             <a href="#projects">Projets</a>
@@ -188,7 +223,7 @@
         <div class="hero">
             <span class="badge">Alternant Développeur chaîne radio chez Thales</span>
             <h1>Kylian Hausmann</h1>
-            <p>Futur étudiant en 3e année de BUT GEII (Électronique & Systèmes Embarqués). Titulaire d'un BTS CIEL, passionné par le hardware, la programmation et les microcontrôleurs[cite: 1].</p>
+            <p>Futur étudiant en 3e année de BUT GEII (Électronique & Systèmes Embarqués). Titulaire d'un BTS CIEL, rigoureux et motivé, acteur du développement et des tests d'équipements radio.</p>
             <div>
                 <a href="#contact" class="btn">Me contacter</a>
                 <a href="#projects" class="btn" style="background-color: transparent; border: 1px solid var(--primary);">Voir mes projets</a>
@@ -199,10 +234,10 @@
         <section id="about">
             <h2>À propos</h2>
             <div class="card">
-                <p>Rigoureux, adaptable et doté d'un bon esprit d'autonomie[cite: 1], je combine des compétences solides en électronique analogique/numérique et en programmation (Python, C/C++). Actuellement en alternance, je souhaite contribuer activement au développement et aux tests d'équipements radio[cite: 1].</p>
-                <div style="margin-top: 1rem;">
-                    <strong>Langues :</strong> Français (Maternelle) | Anglais (B2) | Espagnol (B1)[cite: 1]<br>
-                    <strong>Centres d'intérêt :</strong> Aéronautique (aviation, salons)[cite: 1] | Automobile (restauration de véhicules anciens)[cite: 1]
+                <p>Passionné par l'électronique, les microcontrôleurs et la programmation de systèmes embarqués, je combine des compétences techniques solides en hardware et en software. Mon alternance au sein de Thales s'inscrit dans ma volonté de participer à des projets industriels de pointe sur les chaînes radio.</p>
+                <div style="margin-top: 1rem; color: var(--text-muted);">
+                    <strong>Langues :</strong> Français (Maternelle) | Anglais (B2) | Espagnol (B1)<br>
+                    <strong>Centres d'intérêt :</strong> Aéronautique (aviation, salons) | Automobile (restauration de véhicules anciens)
                 </div>
             </div>
         </section>
@@ -214,29 +249,29 @@
                 <div class="card">
                     <span class="date">2026 - Projet Scolaire / Personnel</span>
                     <h3>Système de vidéosurveillance embarqué</h3>
-                    <p>Conception et intégration d'un système embarqué de vidéosurveillance[cite: 1].</p>
+                    <p>Conception et intégration d'un système embarqué de vidéosurveillance.</p>
                     <ul>
-                        <li>Câblage et architecture matérielle[cite: 1]</li>
-                        <li>Configuration des équipements réseau et interfaces[cite: 1]</li>
-                        <li>Programmation de microcontrôleurs[cite: 1]</li>
-                        <li>Tests fonctionnels et validation du dispositif[cite: 1]</li>
+                        <li>Câblage et architecture matérielle</li>
+                        <li>Configuration des équipements réseau et interfaces</li>
+                        <li>Programmation de microcontrôleurs</li>
+                        <li>Tests fonctionnels et validation du dispositif</li>
                     </ul>
                 </div>
                 <div class="card">
                     <span class="date">2025 - Projet Personnel</span>
                     <h3>Frein à main pour simulateur</h3>
-                    <p>Développement complet d'un frein à main sur mesure[cite: 1].</p>
+                    <p>Développement complet d'un frein à main sur mesure pour simulateur.</p>
                     <ul>
-                        <li>Conception mécanique et impression 3D[cite: 1]</li>
-                        <li>Intégration de capteurs[cite: 1]</li>
-                        <li>Programmation embarquée (Arduino micro)[cite: 1]</li>
-                        <li>Calibration et tests[cite: 1]</li>
+                        <li>Conception mécanique et impression 3D</li>
+                        <li>Intégration de capteurs</li>
+                        <li>Programmation embarquée (Arduino micro)</li>
+                        <li>Calibration, test et fabrication</li>
                     </ul>
                 </div>
                 <div class="card">
                     <span class="date">2025 / 2026 - Prototypage</span>
                     <h3>Impression 3D & Prototypage</h3>
-                    <p>Réalisation de pièces techniques pour projets électroniques (supports, boîtiers) via modélisation CAO[cite: 1].</p>
+                    <p>Réalisation de pièces techniques pour projets électroniques (supports, boîtiers) via modélisation CAO.</p>
                 </div>
             </div>
         </section>
@@ -248,21 +283,21 @@
                 <div class="card">
                     <span class="date">Depuis Septembre 2024</span>
                     <h3>Technicien Informatique et Réseaux</h3>
-                    <p><strong>DSV (ex-DB Schenker)</strong>, Tremblay-en-France[cite: 1]</p>
+                    <p><strong>DSV (ex-DB Schenker)</strong>, Tremblay-en-France</p>
                     <ul>
-                        <li>Câblages réseaux et équipements informatiques[cite: 1]</li>
-                        <li>Interventions techniques et support Île-de-France[cite: 1]</li>
-                        <li>Mise en service et configuration d'infrastructures réseaux[cite: 1]</li>
-                        <li>Maintenance préventive et corrective[cite: 1]</li>
+                        <li>Câblages réseaux et équipements informatiques</li>
+                        <li>Interventions techniques et support Île-de-France</li>
+                        <li>Mise en service et configuration d'infrastructures</li>
+                        <li>Maintenance préventive et corrective</li>
                     </ul>
                 </div>
                 <div class="card">
                     <span class="date">Fév. 2022 - Avr. 2023</span>
                     <h3>Stagiaire Technicien Informatique</h3>
-                    <p><strong>ABSOLUTE PC</strong>, Paris[cite: 1]</p>
+                    <p><strong>ABSOLUTE PC</strong>, Paris</p>
                     <ul>
-                        <li>Réparation et remplacement d'éléments défectueux[cite: 1]</li>
-                        <li>Configuration de postes utilisateurs et tests de fonctionnement[cite: 1]</li>
+                        <li>Réparation et remplacement d'éléments défectueux</li>
+                        <li>Configuration de postes utilisateurs et tests de fonctionnement</li>
                     </ul>
                 </div>
             </div>
@@ -274,8 +309,8 @@
             <div class="grid">
                 <div class="card">
                     <h3>Formations</h3>
-                    <p><strong>BUT GEII (Électronique & Systèmes Embarqués)</strong><br>UPEC (2026 / 2027)[cite: 1]</p>
-                    <p><strong>BTS Cybersécurité, Informatique & Réseaux, Électronique (CIEL)</strong><br>UTEC Marne-la-Vallée (2024 / 2026)[cite: 1]</p>
+                    <p><strong>BUT GEII (Électronique & Systèmes Embarqués)</strong><br>UPEC (2026 / 2027)</p>
+                    <p><strong>BTS Cybersécurité, Informatique & Réseaux, Électronique (CIEL)</strong><br>UTEC Marne-la-Vallée (2024 / 2026)</p>
                 </div>
                 <div class="card">
                     <h3>Compétences Techniques</h3>
@@ -298,9 +333,9 @@
         <section id="contact" style="text-align: center;">
             <h2>Contact</h2>
             <div class="card" style="max-width: 600px; margin: 1.5rem auto 0 auto;">
-                <p><strong>Téléphone :</strong> 07 82 81 35 62[cite: 1]</p>
-                <p><strong>Email :</strong> <a href="mailto:kylianhausmann@gmail.com" style="color: var(--primary);">kylianhausmann@gmail.com</a>[cite: 1]</p>
-                <p><strong>Localisation :</strong> Île-de-France (Permis B/A, véhiculé)[cite: 1]</p>
+                <p><strong>Téléphone :</strong> 07 82 81 35 62</p>
+                <p><strong>Email :</strong> <a href="mailto:kylianhausmann@gmail.com" style="color: var(--accent);">kylianhausmann@gmail.com</a></p>
+                <p><strong>Localisation :</strong> Île-de-France (Permis B/A, véhiculé)</p>
                 <div style="margin-top: 1.5rem;">
                     <a href="mailto:kylianhausmann@gmail.com" class="btn">M'envoyer un email</a>
                 </div>
@@ -309,7 +344,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 - Kylian Hausmann | Portfolio</p>
+        <p>&copy; 2026 - Kylian Hausmann | Portfolio Professionnel</p>
     </footer>
 
 </body>
